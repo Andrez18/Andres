@@ -90,12 +90,12 @@
 
     .text-inicial {
         animation-delay: 0.5s;
-        margin-top: 140px;
+        margin-top: 80px; /* Menos margen en móviles */
     }
 
     .projects-section {
         animation-delay: 1s;
-        margin-top: 120px;
+        margin-top: 60px; /* Menos margen en móviles */
     }
 
     .project {
@@ -119,7 +119,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 15px; /* Menos padding en móviles */
         max-width: 1200px;
         width: 100%;
         box-sizing: border-box;
@@ -132,8 +132,8 @@
     .text-inicial {
         display: flex;
         align-items: center;
-        gap: 40px;
-        margin-bottom: 60px;
+        gap: 20px; /* Menos espacio en móviles */
+        margin-bottom: 40px; /* Menos margen en móviles */
         flex-wrap: wrap;
     }
     
@@ -144,14 +144,14 @@
 
     .title-text h3 {
         font-weight: 700;
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2rem, 5vw, 3rem); /* Tamaño de fuente más pequeño en móviles */
         text-align: flex-start;
         letter-spacing: 0.5px;
         line-height: 1.2;
     }
 
     .title-text p {
-        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        font-size: clamp(1rem, 3vw, 1.5rem); /* Tamaño de fuente más pequeño en móviles */
         text-align: flex-start;
         max-width: 500px;
         margin-left: 0;
@@ -159,9 +159,10 @@
     }
 
     .image {
-        width: 300px; 
-        height: 400px;
-        max-width: 100%;
+        width: 100%; /* Ocupa todo el ancho en móviles */
+        max-width: 300px; /* Máximo ancho en móviles */
+        height: auto;
+        aspect-ratio: 3/4;
     }
 
     .image img {
@@ -177,19 +178,20 @@
     }
 
     .projects-section h4 {
-        font-size: clamp(2.8rem, 4vw, 3.5rem);
-        margin-bottom: 2rem;
+        font-size: clamp(2rem, 4vw, 2.5rem); /* Tamaño de fuente más pequeño en móviles */
+        margin-bottom: 1.5rem; /* Menos margen en móviles */
         font-weight: 500;
-        margin-top: 120px;
+        margin-top: 60px; /* Menos margen en móviles */
         border-bottom: 2px solid #fafafa;
         width: 200px;
-        margin-left: 450px;
+        margin-left: auto; /* Centrado en móviles */
+        margin-right: auto; /* Centrado en móviles */
     }
 
     .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Una columna en móviles */
+        gap: 20px; /* Menos espacio entre tarjetas en móviles */
     }
 
     .project {
@@ -213,23 +215,23 @@
 
     .project-image {
         width: 100%;
-        height: 370px;
+        height: 250px; /* Altura más pequeña en móviles */
         overflow: hidden;
     }
 
     .project h5, .project p, .project-tags, .project-links {
-        padding: 0 20px;
+        padding: 0 15px; /* Menos padding en móviles */
     }
 
     .project h5 {
-        font-size: 1.5rem;
-        margin: 20px 0 10px 20px;
+        font-size: 1.3rem; /* Tamaño de fuente más pequeño en móviles */
+        margin: 15px 0 10px 15px; /* Menos margen en móviles */
         color: #fff;
     }
 
     .project p {
-        margin: 0 20px 20px 20px;
-        font-size: 1rem;
+        margin: 0 15px 15px 15px; /* Menos margen en móviles */
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño en móviles */
         color: rgba(255, 255, 255, 0.8);
         flex-grow: 1;
     }
@@ -237,30 +239,30 @@
     .project-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        margin: 0 20px 15px 20px;
+        gap: 8px; /* Menos espacio entre etiquetas en móviles */
+        margin: 0 15px 10px 15px; /* Menos margen en móviles */
     }
 
     .tag {
-        padding: 5px 10px;
+        padding: 4px 8px; /* Menos padding en móviles */
         background-color: #565db8cc;
         color: white;
         border-radius: 20px;
-        font-size: 0.8rem;
+        font-size: 0.7rem; /* Tamaño de fuente más pequeño en móviles */
     }
 
     .project-links {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px 15px;
+        padding: 0 15px 10px; /* Menos padding en móviles */
         margin: 0;
     }
 
     .github-link {
         color: #fff;
         text-decoration: none;
-        font-size: 1.5rem;
+        font-size: 1.3rem; /* Tamaño de fuente más pequeño en móviles */
         transition: color 0.2s ease;
     }
 
@@ -279,9 +281,9 @@
         color: white;
     }
 
-    @media (max-width: 968px) {
+    @media (max-width: 768px) {
         .text-inicial {
-            gap: 30px;
+            gap: 20px; /* Menos espacio en móviles */
             justify-content: center;
             text-align: center;
         }
@@ -297,27 +299,9 @@
         }
     }
 
-    @media (max-width: 768px) {
-        .container {
-            padding: 0 15px;
-        }
-        
-        .text-inicial {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .image {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            aspect-ratio: 3/4;
-        }
-    }
-
     @media (max-width: 480px) {
         .projects-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Una columna en móviles */
         }
 
         .project-links {
@@ -328,7 +312,7 @@
 
         .github-link {
             margin-left: 0;
-            font-size: 1.3rem;
+            font-size: 1.2rem; /* Tamaño de fuente más pequeño en móviles */
         }
     }
 </style>
@@ -336,6 +320,6 @@
 <script is:inline>
     const viewProject = document.getElementById('view-project');
     viewProject.addEventListener('click', () => {
-        alert('Este proyecto yo no está disponible, puedes ver el código fuente en el repositorio de GitHub.');
+        alert('Este proyecto no está disponible, puedes ver el código fuente en el repositorio de GitHub.');
     });
 </script>
