@@ -19,10 +19,12 @@
     </div>
 
     <nav class="menu">
-        <a href="/" class="nav-links" id="home">Inicio</a>
-        <a href="/Projects" class="nav-links" id="projects">Proyectos</a>
-        <a href="#" class="nav-links" id="conocimientos">Habilidades</a>
-        <a href="#" class="nav-links" id="contact">Contacto</a>
+        <a href="#inicio" class="nav-links" id="home">Inicio</a>
+        <a href="#proyectos" class="nav-links" id="projects">Proyectos</a>
+        <a href="#habilidades" class="nav-links" id="conocimientos">Habilidades</a>
+        <a href="https://github.com/Andrez18" class="nav-links" id="contact">
+            <i class="fa-brands fa-github"></i>
+        </a>
     </nav>
 </header>
 
@@ -100,7 +102,7 @@
         text-align: center;
         display: flex;
         flex-direction: column;
-        margin-top: 12px;
+        margin-top: px;
     }
 
     .menu a {
@@ -112,6 +114,15 @@
 
     .menu a:hover {
         color: #565db8cc;
+    }
+
+    #contact i{
+        display: flex;
+        align-items:flex-start;
+        justify-content:flex-start;
+        font-size: 40px;
+        rotate: 0deg;
+
     }
 
     #home {
@@ -203,4 +214,15 @@
     }
 
     animateName();
+
+    const github = document.getElementById("github");
+    const linkedin = document.getElementById("linkedin");
+
+    github.addEventListener("click", () => {
+        window.open("https://github.com/Andrez18", "_blank");
+    });
+    linkedin.addEventListener("click", () => {
+        window.open("https://www.linkedin.com/in/andres-gomez-123456789", "_blank");
+    });
+
 </script>
