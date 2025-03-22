@@ -1,11 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Welcome from '../components/Welcome.astro';
 import Projects from '../components/Projects.astro';
 import Knowledge from '../components/Knowledge.astro';
+
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Web Designer Portfolio">  
+  <Header />
   <Welcome />
   <Projects />
   <Knowledge />
