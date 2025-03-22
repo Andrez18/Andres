@@ -1,0 +1,68 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Andres - Proyectos">
+    <section class="projects-section">
+        <header>
+            <div class="back">
+                <i class="ri-arrow-left-s-line"></i>
+                <a href="/">Regresar</a>
+            </div>
+            <section class="section-info">
+                <h1>Mis proyectos</h1>
+                <p>Como estudiante he desarrollado varios proyectos, aquí puedes ver cada uno de ellos:</p>
+            </section>
+        </header>
+    </section>
+
+
+    <style>
+        .projects-section{
+            height: 100vh;
+        }
+
+        .back {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 1.5rem;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .back a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #565db8cc;
+            }   
+        }
+
+        .back:hover{
+            color: #565db8cc;
+        }
+
+        .section-info{
+            margin: 40px 40px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            h1{
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 5px;
+            }
+        }
+        
+    </style>
+</Layout>
+

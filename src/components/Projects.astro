@@ -15,37 +15,44 @@
             <div class="projects-grid">
                 <div class="project">
                     <div class="project-image">
-                        <img src="/assets/proyecto1.jpg" alt="imagen del primer proyecto">
+                        <img src="/assets/logo-semillero.png" alt="imagen del primer proyecto">
                     </div>
-                    <h5>Proyecto 1</h5>
-                    <p>Descripción del proyecto 1. Una aplicación web desarrollada con React y Node.js que permite gestionar tareas diarias.</p>
+                    <h5>Prodig01</h5>
+                    <p>Desarrollé el sitio web informativo del semillero, proporcionando una plataforma clara y accesible para dar a conocer sus actividades, misión y oportunidades de participación.</p>
                     <div class="project-tags">
-                        <span class="tag">React</span>
+                        <span class="tag">Astro</span>
+                        <span class="tag">TailwindCSS</span>
+                        <span class="tag">Firebase</span>
                         <span class="tag">Node.js</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="github-link">
+                        <a href="https://github.com/Andrez18/web-semillero" class="github-link">
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="#" class="view-project">Ver proyecto →</a>
+                        <a href="https://prodig01.vercel.app/" class="view-project">Ver proyecto →</a>
                     </div>
                 </div>
                 
                 <div class="project">
                     <div class="project-image">
-                        <img src="/assets/proyecto2.jpg" alt="imagen del segundo proyecto">
+                        <img src="/assets/orebook.jpg" alt="imagen del segundo proyecto">
+
+                        <!-- HlE9O3S707r4 -->
                     </div>
-                    <h5>Proyecto 2</h5>
-                    <p>Descripción del proyecto 2. Una plataforma e-commerce con carrito de compras y pasarela de pagos integrada.</p>
+                    <h5>Orebook</h5>
+                    <p>Participé y fuí lider en el desarrollo de un sitio web para la gestión de una biblioteca institucional.</p>
                     <div class="project-tags">
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">Firebase</span>
+                        <span class="tag">Html</span>
+                        <span class="tag">Css</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">sql</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="github-link">
+                        <a href="https://github.com/Andrez18/Orebook" class="github-link">
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="#" class="view-project">Ver proyecto →</a>
+                        <a href="#" class="view-project" id="view-project">Ver proyecto →</a>
                     </div>
                 </div>
             </div>
@@ -85,10 +92,19 @@
 
     .text-inicial {
         animation-delay: 0.5s;
+        margin-top: 140px;
     }
 
     .projects-section {
         animation-delay: 1s;
+        margin-top: 120px;
+
+        h4{
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+        }
     }
 
     .project {
@@ -167,12 +183,17 @@
 
     .projects-section {
         margin-top: 2rem;
+        justify-content: center;
     }
 
     .projects-section h4 {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-size: clamp(2.8rem, 4vw, 3.5rem);
         margin-bottom: 2rem;
         font-weight: 500;
+        margin-top: 120px;
+        border-bottom: 2px solid #fafafa;
+        width: 200px;
+        margin-left: 450px;
     }
 
     .projects-grid {
@@ -202,7 +223,7 @@
 
     .project-image {
         width: 100%;
-        height: 200px;
+        height: 370px;
         overflow: hidden;
     }
 
@@ -321,3 +342,11 @@
         }
     }
 </style>
+
+<script is:inline>
+    const viewProject = document.getElementById('view-project');
+    viewProject.addEventListener('click', () => {
+        alert('Este proyecto yo no está disponible, puedes ver el código fuente en el repositorio de GitHub.');
+    });
+
+</script>
