@@ -1,0 +1,207 @@
+<header class="header">
+    <div>
+        <h1 class="name-container">
+            <span class="name" id="first-name"></span>
+            <span class="name" id="last-name"></span>
+        </h1>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star" id="star-2"></i>
+    </div>
+
+    <div class="espaciado"></div>
+
+    <div class="description">
+        <p>Hey! Soy Andrés Felipe Gómez, desarrollador web
+        <span class="mode">Full-stack</span></p>
+        <p>Creando sitios funcionales y entendibles <br>
+        Mi motivación siempre será el poder crear.</p>
+        <a href="">Ver más</a>
+    </div>
+
+    <nav class="menu">
+        <a href="#" class="nav-links" id="home">Inicio</a>
+        <a href="#" class="nav-links" id="projects">Proyectos</a>
+        <a href="#" class="nav-links" id="conocimientos">Habilidades</a>
+        <a href="#" class="nav-links" id="contact">Contacto</a>
+    </nav>
+</header>
+
+<style>
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .name-container {
+        font-size: 26px;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+    .name {
+        display: block;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    #first-name {
+        margin-bottom: -5px;
+    }
+
+    i {
+        padding-top: 15px;
+        font-size: 58px;
+        rotate: -12deg;
+    }
+
+    #star-2 {
+        font-size: 40px;
+        rotate: 12deg;
+    }
+
+    .espaciado {
+        display: none; 
+    }
+
+    .description {
+        max-width: 100%;
+        font-size: 18px;
+    }
+    .description a{
+        color: #5b6ed9;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+        font-size: 22px;
+    }
+
+    .description a:hover {
+        opacity: 0.7;
+    }
+
+    .mode {
+        color: #565db8cc;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .menu {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .menu a:hover {
+        color: #565db8cc;
+    }
+
+    #home {
+        border-bottom: 3px solid #565db8cc;
+        width: 40px;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .header > div,
+    .header > nav {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+    }
+
+    .header > div:nth-child(1) { animation-delay: 0.5s; }
+    .header > div:nth-child(2) { animation-delay: 1s; }
+    .header > div:nth-child(3) { animation-delay: 1.5s; }
+    .header > nav { animation-delay: 2s; }
+
+    /* Media Queries para responsive */
+    @media (min-width: 768px) {
+        .header {
+            flex-direction: row;
+            align-items: flex-start;
+            text-align: left;
+            padding: 60px 40px 50px 40px;
+            gap: 60px;
+        }
+
+        .name-container {
+            align-items: flex-start;
+            width: 150px;
+            height: 60px;
+        }
+
+        .espaciado {
+            display: block;
+            padding: 0rem 15rem;
+        }
+
+        .menu {
+            text-align: left;
+            margin-left: 15px;
+        }
+    }
+</style>
+
+<script is:inline>
+    const firstNameElement = document.getElementById("first-name");
+    const lastNameElement = document.getElementById("last-name");
+
+    const firstName = "Andrés";
+    const lastName = "Gómez";
+
+    function animateName() {
+        let indexFirst = 0;
+        let indexLast = 0;
+        firstNameElement.textContent = "";
+        lastNameElement.textContent = "";
+
+        const firstInterval = setInterval(() => {
+            if (indexFirst < firstName.length) {
+                firstNameElement.textContent += firstName[indexFirst];
+                indexFirst++;
+            } else {
+                clearInterval(firstInterval);
+                
+                // Después de escribir el primer nombre, empieza el apellido
+                const lastInterval = setInterval(() => {
+                    if (indexLast < lastName.length) {
+                        lastNameElement.textContent += lastName[indexLast];
+                        indexLast++;
+                    } else {
+                        clearInterval(lastInterval);
+                        setTimeout(animateName, 5000); 
+                    }
+                }, 150);
+            }
+        }, 150);
+    }
+
+    animateName();
+</script>

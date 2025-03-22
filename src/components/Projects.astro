@@ -1,0 +1,323 @@
+<div class="container">
+    <section>
+        <div class="text-inicial">
+            <div class="title-text">
+                <h3>Mis <br> proyectos</h3>
+                <p>Los mejores proyectos que he hecho hasta el momento.</p>
+            </div>
+            <div class="image">
+                <img src="/assets/me.jpeg" alt="Imagen sobre mí">
+            </div>
+        </div>
+        
+        <div class="projects-section">
+            <h4>Proyectos</h4>
+            <div class="projects-grid">
+                <div class="project">
+                    <div class="project-image">
+                        <img src="/assets/proyecto1.jpg" alt="imagen del primer proyecto">
+                    </div>
+                    <h5>Proyecto 1</h5>
+                    <p>Descripción del proyecto 1. Una aplicación web desarrollada con React y Node.js que permite gestionar tareas diarias.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="#" class="view-project">Ver proyecto →</a>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-image">
+                        <img src="/assets/proyecto2.jpg" alt="imagen del segundo proyecto">
+                    </div>
+                    <h5>Proyecto 2</h5>
+                    <p>Descripción del proyecto 2. Una plataforma e-commerce con carrito de compras y pasarela de pagos integrada.</p>
+                    <div class="project-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="#" class="view-project">Ver proyecto →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .text-inicial,
+    .projects-section,
+    .project {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+    }
+
+    .text-inicial {
+        animation-delay: 0.5s;
+    }
+
+    .projects-section {
+        animation-delay: 1s;
+    }
+
+    .project {
+        animation-delay: 1.5s;
+    }
+
+    .project:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    .project-image img {
+        transition: transform 0.5s ease;
+    }
+
+    .project:hover .project-image img {
+        transform: scale(1.05);
+    }
+
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1200px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .text-inicial {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+    }
+    
+    .title-text {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .title-text h3 {
+        font-weight: 700;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        text-align: flex-start;
+        letter-spacing: 0.5px;
+        margin-bottom: -10px;
+        line-height: 1.2;
+    }
+
+    .title-text p {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        text-align: flex-start;
+        max-width: 500px;
+        margin-left: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .image {
+        width: 300px; 
+        height: 400px;
+        max-width: 100%;
+    }
+
+    .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        border-radius: 10px;
+    }
+
+    .projects-section {
+        margin-top: 2rem;
+    }
+
+    .projects-section h4 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 2rem;
+        font-weight: 500;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .project {
+        margin-bottom: 10px;
+        padding: 0;
+        border-radius: 12px;
+        background-color: rgba(30, 30, 30, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .project h5, .project p, .project-tags, .project-links {
+        padding: 0 20px;
+    }
+
+    .project h5 {
+        font-size: 1.5rem;
+        margin: 20px 0 10px 20px;
+        color: #fff;
+    }
+
+    .project p {
+        margin: 0 20px 20px 20px;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        flex-grow: 1;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 20px 15px 20px;
+    }
+
+    .tag {
+        padding: 5px 10px;
+        background-color: #565db8cc;
+        color: white;
+        border-radius: 20px;
+        font-size: 0.8rem;
+    }
+
+    .project-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px 15px;
+        margin: 0;
+    }
+
+    .github-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: color 0.2s ease;
+    }
+
+    .github-link:hover {
+        color: #565db8cc;
+    }
+
+    .view-project {
+        color: #565db8cc;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .view-project:hover {
+        color: white;
+    }
+
+    @media (max-width: 968px) {
+        .text-inicial {
+            gap: 30px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .title-text {
+            text-align: center;
+        }
+
+        .title-text p {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 15px;
+        }
+        
+        .text-inicial {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            aspect-ratio: 3/4;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project-links {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .github-link {
+            margin-left: 0;
+            font-size: 1.3rem;
+        }
+    }
+</style>
