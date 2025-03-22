@@ -1,167 +1,207 @@
-<section class="skills-section">
+<section class="skills-section" id="habilidades">
     <div class="skills-container">
+        <!-- Habilidades principales -->
         <h2 class="skills-title">Habilidades</h2>
         <p class="skills-description">Aquí están las tecnologías y habilidades en las que me especializo:</p>
 
-        <div class="slider">
-            <div class="slider-track">
-                <div class="skill-card">
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
                     <i class="fa-brands fa-html5"></i>
-                    <h3>HTML</h3>
-                    <p>Maquetación semántica y accesible para estructurar contenido web.</p>
                 </div>
-                <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Maquetación semántica y accesible para estructurar contenido web.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
                     <i class="fa-brands fa-css3-alt"></i>
-                    <h3>CSS</h3>
-                    <p>Diseño responsive, animaciones y estilos modernos para interfaces atractivas.</p>
                 </div>
-                <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Diseño responsive, animaciones y estilos modernos para interfaces atractivas.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
                     <i class="fa-brands fa-js"></i>
-                    <h3>JavaScript</h3>
-                    <p>Desarrollo de interactividad y lógica del lado del cliente.</p>
                 </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-node-js"></i>
-                    <h3>Node.js</h3>
-                    <p>Creación de aplicaciones backend escalables y eficientes.</p>
-                </div>
-                <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Desarrollo de interactividad y lógica del lado del cliente.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
                     <i class="fa-brands fa-php"></i>
-                    <h3>PHP</h3>
-                    <p>Desarrollo de aplicaciones web dinámicas y gestión de bases de datos.</p>
                 </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <h3>Resolución de problemas</h3>
-                    <p>Análisis y búsqueda de soluciones factibles para desafíos técnicos.</p>
-                </div>
+                <h3>PHP</h3>
+                <p>Desarrollo de aplicaciones web dinámicas y gestión de bases de datos.</p>
             </div>
         </div>
 
-        <!-- Controles del slider -->
-        <div class="slider-controls">
-            <button class="slider-prev"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="slider-next"><i class="fa-solid fa-chevron-right"></i></button>
+        <!-- Tecnologías que estás aprendiendo -->
+        <h2 class="skills-title">Actualmente aprendiendo</h2>
+        <p class="skills-description">Estas son las tecnologías en las que estoy enfocándome actualmente:</p>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-rocket"></i> <!-- Icono genérico para Astro -->
+                </div>
+                <h3>Astro</h3>
+                <p>Desarrollo de sitios web estáticos modernos y optimizados.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-node-js"></i> <!-- Icono de Node.js -->
+                </div>
+                <h3>Node.js</h3>
+                <p>Profundizando en la creación de aplicaciones backend escalables.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-    .slider {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .skills-section{
+    .skills-section {
         margin-top: 20px;
+        padding: 60px 20px;
+        color: #fff; 
     }
 
-    .slider-track {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-    }
-
-    .skill-card {
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
+    .skills-container {
+        max-width: 1200px;
+        margin: 0 auto;
         padding: 20px;
-        text-align: center;
-        min-width: 100px;
-        margin: 0 10px;
-        flex: 0 0 auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .skills-container h2{
-        font-size: 2rem;
+    .skills-title {
+        font-size: 2.5rem;
         font-weight: 600;
         margin-bottom: 20px;
         text-align: center;
-        margin-top: 100px;
+        color: #fff;
     }
 
-    .skills-container p{
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.8);
+    .skills-description {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8); 
         text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 0 20px;
+        margin-bottom: 50px;
+    }
+
+    .skill-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1); 
+        border-radius: 10px;
+        padding: 25px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .skill-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+        border: 1px solid rgba(255, 255, 255, 0.2); 
+    }
+
+    .skill-icon {
         margin-bottom: 20px;
     }
 
-    .slider-controls {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+    .skill-icon i {
+        font-size: 2.5rem;
+        color: #5b6ed9; 
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    .slider-controls button {
-        background-color: #5b6ed9;
-        border: none;
+    .skill-card:hover .skill-icon i {
+        transform: scale(1.2);
+        color: #9b59b6;
+    }
+
+    .skill-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
         color: #fff;
-        padding: 10px 20px;
-        border-radius: 20px%;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
     }
 
-    .slider-controls button:hover {
-        background-color: #4a5bb8;
+    .skill-card p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8); 
+    }
+
+    @media (max-width: 768px) {
+        .skills-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .skill-card {
+            padding: 20px;
+        }
+
+        .skill-icon i {
+            font-size: 2rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .skill-card {
+            padding: 15px;
+        }
+
+        .skill-icon i {
+            font-size: 1.8rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+        }
+
+        .skill-card p {
+            font-size: 0.8rem;
+        }
     }
 </style>
 
 <script>
-    const sliderTrack = document.querySelector('.slider-track');
-    const prevButton = document.querySelector('.slider-prev');
-    const nextButton = document.querySelector('.slider-next');
-    const cardWidth = document.querySelector('.skill-card').offsetWidth + 20;
+    document.addEventListener('DOMContentLoaded', () => {
+        const skillCards = document.querySelectorAll('.skill-card');
 
-    let currentPosition = 0;
-    let autoSlideInterval;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
-    function moveSlider(direction) {
-        const maxMove = -(sliderTrack.children.length * cardWidth - cardWidth * 3); 
-
-        if (direction === 'next') {
-            if (currentPosition > maxMove) {
-                currentPosition -= cardWidth;
-            } else {
-                currentPosition = 0;
-            }
-        } else {
-            if (currentPosition < 0) {
-                currentPosition += cardWidth;
-            } else {
-                currentPosition = maxMove; 
-            }
-        }
-
-        sliderTrack.style.transform = `translateX(${currentPosition}px)`;
-    }
-
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(() => {
-            moveSlider('next');
-        }, 2000); 
-    }
-
-    function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-    }
-
-    // Eventos para los botones
-    nextButton.addEventListener('click', () => {
-        stopAutoSlide();
-        moveSlider('next');
-        startAutoSlide();
+        skillCards.forEach(card => {
+            observer.observe(card);
+        });
     });
-
-    prevButton.addEventListener('click', () => {
-        stopAutoSlide();
-        moveSlider('prev');
-        startAutoSlide();
-    });
-
-    startAutoSlide();
 </script>
