@@ -1,306 +1,310 @@
 <header class="header">
-    <div>
-        <h1 class="name-container">
-            <span class="name" id="first-name"></span>
-            <span class="name" id="last-name"></span>
-        </h1>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star" id="star-2"></i>
-    </div>
+  <div>
+    <h1 class="name-container">
+      <span class="name" id="first-name"></span>
+      <span class="name" id="last-name"></span>
+    </h1>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star" id="star-2"></i>
+  </div>
 
-    <div class="espaciado"></div>
+  <div class="espaciado"></div>
 
-    <div class="description">
-        <p>Hey! Soy Andrés Felipe Gómez, desarrollador web
-        <span class="mode">Full-stack</span></p>
-        <p>Creando sitios funcionales y entendibles <br>
-        Mi motivación siempre será el poder crear.</p>
-        <a href="">Ver más</a>
-    </div>
+  <div class="description">
+    <p>
+      Hey! Soy Andrés Felipe Gómez, desarrollador web
+      <span class="mode">Full-stack</span>
+    </p>
+    <p>
+      Creando sitios funcionales y entendibles <br />
+      Mi motivación siempre será el poder crear.
+    </p>
+    <a href="../src/utils/CV.pdf" download="CV_Andres_Gomez.pdf">Descargar CV</a>
+  </div>
 
-    <button id="menu-toggle" aria-label="Toggle Menu">
-        <i class="ri-menu-line"></i>
-    </button>
+  <button id="menu-toggle" aria-label="Toggle Menu">
+    <i class="ri-menu-line"></i>
+  </button>
 
-    <nav class="menu" id="main-menu">
-        <a href="#inicio" class="nav-links" id="home">Inicio</a>
-        <a href="#proyectos" class="nav-links" id="projects">Proyectos</a>
-        <a href="#habilidades" class="nav-links" id="conocimientos">Habilidades</a>
-        <a href="https://github.com/Andrez18" class="nav-links" id="contact">
-            <i class="fa-brands fa-github"></i>
-        </a>
-    </nav>
+  <nav class="menu" id="main-menu">
+    <a href="#inicio" class="nav-links" id="home">Inicio</a>
+    <a href="#proyectos" class="nav-links" id="projects">Proyectos</a>
+    <a href="#habilidades" class="nav-links" id="conocimientos">Habilidades</a>
+    <a href="https://github.com/Andrez18" class="nav-links" id="contact">
+      <i class="fa-brands fa-github"></i>
+    </a>
+  </nav>
 </header>
 
 <style>
-    /* Base Styles */
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .name-container {
+    font-size: 26px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 70px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .name {
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    height: 30px;
+  }
+
+  #first-name {
+    margin-bottom: -5px;
+  }
+
+  i {
+    padding-top: 15px;
+    font-size: 58px;
+    rotate: -12deg;
+  }
+
+  #star-2 {
+    font-size: 40px;
+    rotate: 12deg;
+  }
+
+  .espaciado {
+    display: none;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 18px;
+  }
+
+  .description a {
+    color: #5b6ed9;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    font-size: 22px;
+  }
+
+  .description a:hover {
+    opacity: 0.7;
+  }
+
+  .mode {
+    color: #565db8cc;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  #menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background: #565db8cc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  #menu-toggle i {
+    font-size: 24px;
+    padding: 0;
+    rotate: 0deg;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(25, 25, 35, 0.95);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 90;
+    text-align: left;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 5px 0;
+  }
+
+  .menu a:hover {
+    color: #565db8cc;
+  }
+
+  #home {
+    border-bottom: 3px solid #565db8cc;
+    width: 40px;
+  }
+
+  #contact i {
+    font-size: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    rotate: 0deg;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .header > div,
+  .header > nav {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .header > div:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .header > div:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .header > div:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  .header > nav {
+    animation-delay: 0.8s;
+  }
+
+  @media (min-width: 768px) {
     .header {
-        display: flex;
-        flex-direction: column;
-        gap: 20px; 
-        padding: 20px;
-        align-items: center;
-        text-align: center;
-        position: relative;
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+      padding: 80px 40px 50px 40px;
+      gap: 60px;
     }
 
-    /* Name Container */
     .name-container {
-        font-size: 26px;
-        font-weight: 600;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        min-height: 70px; /* Fixed height to prevent jumping */
-        line-height: 1.2;
-        letter-spacing: 0.5px;
-        margin-bottom: 10px;
-        overflow: hidden;
+      align-items: flex-start;
+      width: 150px;
+      height: 60px;
     }
 
-    .name {
-        display: block;
-        white-space: nowrap;
-        position: relative;
-        height: 30px; /* Fixed height to prevent jumping */
-    }
-
-    #first-name {
-        margin-bottom: -5px;
-    }
-
-    /* Stars */
-    i {
-        padding-top: 15px;
-        font-size: 58px;
-        rotate: -12deg;
-    }
-
-    #star-2 {
-        font-size: 40px;
-        rotate: 12deg;
-    }
-
-    /* Spacer */
     .espaciado {
-        display: none; 
+      display: block;
+      padding: 0rem 15rem;
     }
 
-    /* Description */
-    .description {
-        max-width: 100%;
-        font-size: 18px;
-    }
-    
-    .description a{
-        color: #5b6ed9;
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-        font-size: 22px;
-    }
-
-    .description a:hover {
-        opacity: 0.7;
-    }
-
-    .mode {
-        color: #565db8cc;
-        font-weight: 700;
-        font-size: 20px;
-    }
-
-    /* Mobile Menu Toggle with Remix Icon */
     #menu-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 100;
-        background: #565db8cc;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: none;
     }
 
-    #menu-toggle i {
-        font-size: 24px;
-        padding: 0;
-        rotate: 0deg;
-    }
-
-    /* Mobile Menu */
     .menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: 100vh;
-        background: rgba(25, 25, 35, 0.95);
-        display: flex;
-        flex-direction: column;
-        padding: 80px 20px 20px;
-        transition: right 0.3s ease;
-        z-index: 90;
-        text-align: left;
-    }
-
-    .menu.active {
-        right: 0;
+      position: static;
+      text-align: left;
+      margin-left: 15px;
+      background: transparent;
+      height: auto;
+      width: auto;
+      padding: 0;
+      flex-direction: column;
+      z-index: 1;
     }
 
     .menu a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        margin-bottom: 15px;
-        padding: 5px 0;
+      margin-bottom: 8px;
     }
-
-    .menu a:hover {
-        color: #565db8cc;
-    }
-
-    #home {
-        border-bottom: 3px solid #565db8cc;
-        width: 40px;
-    }
-
-    #contact i {
-        font-size: 24px;
-        display: inline-block;
-        vertical-align: middle;
-        padding: 0;
-        rotate: 0deg;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .header > div,
-    .header > nav {
-        opacity: 0;
-        animation: fadeIn 1s ease forwards;
-    }
-
-    .header > div:nth-child(1) { animation-delay: 0.2s; }
-    .header > div:nth-child(2) { animation-delay: 0.4s; }
-    .header > div:nth-child(3) { animation-delay: 0.6s; }
-    .header > nav { animation-delay: 0.8s; }
-
-    @media (min-width: 768px) {
-        .header {
-            flex-direction: row;
-            align-items: flex-start;
-            text-align: left;
-            padding: 80px 40px 50px 40px;
-            gap: 60px;
-        }
-
-        .name-container {
-            align-items: flex-start;
-            width: 150px;
-            height: 60px;
-        }
-
-        .espaciado {
-            display: block;
-            padding: 0rem 15rem;
-        }
-
-        #menu-toggle {
-            display: none;
-        }
-
-        .menu {
-            position: static;
-            text-align: left;
-            margin-left: 15px;
-            background: transparent;
-            height: auto;
-            width: auto;
-            padding: 0;
-            flex-direction: column;
-            z-index: 1;
-        }
-
-        .menu a {
-            margin-bottom: 8px;
-        }
-    }
+  }
 </style>
 
 <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainMenu = document.getElementById('main-menu');
-        
-        if (menuToggle && mainMenu) {
-            menuToggle.addEventListener('click', function() {
-                mainMenu.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(event) {
-                if (!mainMenu.contains(event.target) && event.target !== menuToggle) {
-                    mainMenu.classList.remove('active');
-                }
-            });
-        }
-        
-        const firstNameElement = document.getElementById("first-name");
-        const lastNameElement = document.getElementById("last-name");
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mainMenu = document.getElementById("main-menu");
 
-        const firstName = "Andrés";
-        const lastName = "Gómez";
+    if (menuToggle && mainMenu) {
+      menuToggle.addEventListener("click", function () {
+        mainMenu.classList.toggle("active");
+      });
 
-        function typeWriter(element, text, callback) {
-            let i = 0;
-            element.textContent = "";
-            
-            function type() {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, 150);
-                } else if (callback) {
-                    setTimeout(callback, 300);
-                }
-            }
-            
-            type();
+      document.addEventListener("click", function (event) {
+        if (!mainMenu.contains(event.target) && event.target !== menuToggle) {
+          mainMenu.classList.remove("active");
         }
-        
-        function animacionNombres() {
-            firstNameElement.textContent = "";
-            lastNameElement.textContent = "";
-            
-            setTimeout(() => {
-                typeWriter(firstNameElement, firstName, () => {
-                    typeWriter(lastNameElement, lastName, () => {
-                        // Wait before restarting
-                        setTimeout(animacionNombres, 4000);
-                    });
-                });
-            }, 500);
+      });
+    }
+
+    const firstNameElement = document.getElementById("first-name");
+    const lastNameElement = document.getElementById("last-name");
+
+    const firstName = "Andrés";
+    const lastName = "Gómez";
+
+    function typeWriter(element, text, callback) {
+      let i = 0;
+      element.textContent = "";
+
+      function type() {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 150);
+        } else if (callback) {
+          setTimeout(callback, 300);
         }
-        
-        animacionNombres();
-    });
+      }
+
+      type();
+    }
+
+    function animacionNombres() {
+      firstNameElement.textContent = "";
+      lastNameElement.textContent = "";
+
+      setTimeout(() => {
+        typeWriter(firstNameElement, firstName, () => {
+          typeWriter(lastNameElement, lastName, () => {
+            // Wait before restarting
+            setTimeout(animacionNombres, 4000);
+          });
+        });
+      }, 500);
+    }
+
+    animacionNombres();
+  });
 </script>
