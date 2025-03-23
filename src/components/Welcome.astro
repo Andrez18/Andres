@@ -1,114 +1,130 @@
 <div id="container" id="inicio">
-    <section class="home">
-        <div class="contact-me">
-            <h3>¿Listo para que trabajemos juntos?</h3>
-            <p><a href="mailto:contacto@email.com">¡Contáctame aquí!</a></p>
-        </div>
-        <div class="name">
-            <h2 class="title">Andrés Gómez</h2>
-        </div>
-    </section>
+  <section class="home">
+    <div class="contact-me">
+      <h3>¿Listo para que trabajemos juntos?</h3>
+      <p><a href="#" id="gmail">dev.andrez18@gmail.com</a></p>
+    </div>
+    <div class="name">
+      <h2 class="title">Andrés Gómez</h2>
+    </div>
+  </section>
 </div>
 
 <style>
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  #container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 40px;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-me {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+  }
+
+  .contact-me h3 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: -10px;
+  }
+
+  .contact-me p {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+  }
+
+  .contact-me a {
+    text-decoration: none;
+    color: #5b6ed9;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+  }
+
+  .contact-me a:hover {
+    opacity: 0.7;
+  }
+
+  .name {
+    opacity: 0;
+    animation: slideInLeft 1s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .name h2 {
+    font-size: 11rem;
+    margin-top: -1px;
+    font-weight: 900;
+  }
+
+  @media (max-width: 768px) {
     #container {
-        display: flex;
-        flex-direction: column;
-        margin: 0 40px;
-    }
-
-    .home {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .contact-me {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-bottom: 10px;
-        opacity: 0;
-        animation: fadeIn 1s ease forwards;
-        animation-delay: 0.5s;
+      margin: 0 20px;
     }
 
     .contact-me h3 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        margin-bottom: -30px;
-    }
-
-    .contact-me p {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-    }
-
-    .contact-me a {
-        text-decoration: none;
-        color: #5b6ed9;
-        margin-bottom: 20px;
-        transition: opacity 0.3s ease;
-    }
-
-    .contact-me a:hover {
-        opacity: 0.7;
-    }
-
-    .name {
-        opacity: 0;
-        animation: slideInLeft 1s ease forwards;
-        animation-delay: 1s;
+      margin-bottom: -20px;
     }
 
     .name h2 {
-        font-size: 11rem;
-        margin-top: -1px;
-        font-weight: 900;
+      font-size: clamp(3rem, 8vw, 6rem);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-me h3 {
+      margin-bottom: -10px;
     }
 
-    @media (max-width: 768px) {
-        #container {
-            margin: 0 20px;
-        }
-
-        .contact-me h3 {
-            margin-bottom: -20px;
-        }
-
-        .name h2 {
-            font-size: clamp(3rem, 8vw, 6rem);
-        }
+    .name h2 {
+      font-size: clamp(0rem, 0vw, 0rem);
     }
-
-    @media (max-width: 480px) {
-        .contact-me h3 {
-            margin-bottom: -10px;
-        }
-
-        .name h2 {
-            font-size: clamp(0rem, 0vw, 0rem);
-        }
-    }
+  }
 </style>
+
+<script is:inline>
+  const gmail = document.getElementById("gmail");
+  gmail.addEventListener("click", (event) => {
+    event.preventDefault();
+    const email = gmail.textContent;
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        alert("Correo electrónico copiado al portapapeles");
+      })
+      .catch((err) => {
+        console.error("Error al copiar el correo electrónico: ", err);
+      });
+  });
+</script>
